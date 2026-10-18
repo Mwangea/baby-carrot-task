@@ -1,0 +1,13 @@
+Office scoring standard for the next bulk ferric chloride delivery order
+
+Score product or service code 6810 only. Laboratory packages under any other product code are outside this order. Anhydrous ferric chloride that remains under product code 6810 stays in the score.
+
+Use federal_action_obligation as the dollar measure, including a negative amount when the award is kept. The current total and the potential total are award balances. They repeat on later rows and are not added.
+
+The requirements vehicle is the award in these files with the greatest number of zero-dollar ferric chloride actions. Find the earliest action date on that vehicle. Score an action only when its action date is on or after that date. Omit every action whose federal action obligation is zero, including the vehicle's own modifications.
+
+These files can list the same action twice. Score an action once. Two rows are the same action when the award identifier, the action date, and the federal action obligation all match.
+
+Keep an award only when each scored action's current total equals the sum of that award's scored ferric chloride obligations from its first scored action through that action, in action-date order. When an action fails that test, leave the whole award out. Compare the figures to the cent.
+
+Rank the remaining suppliers by the sum of the kept obligations. The next delivery order goes to the supplier with the largest net.

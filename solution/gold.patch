@@ -1,0 +1,55 @@
+diff --git a/output/recommendation.md b/output/recommendation.md
+new file mode 100644
+--- /dev/null
++++ b/output/recommendation.md
+@@ -0,0 +1,40 @@
++# Ferric chloride supply recommendation
++
++## Recommendation
++
++Place the next bulk ferric chloride delivery order with VETERAN CHEMICALS, INC., whose net federal obligation is 461107.00 USD, 378567.00 USD ahead of the next supplier.
++
++## Evidence
++
++The contract transaction files that this memo uses are:
++- FY2018_ferric_rows.csv
++- FY2019_ferric_rows.csv
++- FY2020_ferric_rows.xlsx
++- FY2021_ferric_rows.xlsx
++- FY2022_ferric_rows.csv
++- FY2023_ferric_rows.xlsx
++- FY2024_ferric_rows.csv
++- FY2025_ferric_rows.csv
++
++Those files are the USAspending contract transaction records for FY2018 through FY2025, snapshot date 2026-09-06.
++Bulk ferric chloride is the product whose product or service code is PSC 6810. Laboratory reagent packages that merely share the chemical name are outside this requirement. Anhydrous ferric chloride under PSC 6810 remains in the score.
++The dollar measure is federal_action_obligation. A deobligation is stored as a negative amount and is omitted when the award current total cannot be rebuilt from the ferric chloride actions.
++The requirements vehicle is W911KF20D0006. Scored actions begin on the first action date of that vehicle, 2020-05-19. Zero-dollar actions are omitted.
++The same action can appear twice. Each action is scored once, matched on award identifier, action date, and federal action obligation.
++These awards are left out because an action's current total does not equal the scored obligations through that action: W911KF20F0155, W911SA22F1006, W911SA23F1000.
++
++Suppliers, net obligation in USD, transaction count, and largest transaction:
++
++- VETERAN CHEMICALS, INC.: net 461107.00 USD, transaction count 18; largest transaction 34559.00 USD on award W911KF24F0057.
++- MARTELLE WATER TREATMENT, INC.: net 82540.00 USD, transaction count 1; largest transaction 82540.00 USD on award W911SA25F1001.
++- HILL BROTHERS CHEMICAL COMPANY: net 24076.92 USD, transaction count 1; largest transaction 24076.92 USD on award 191BWC23P0030.
++- ASRC FEDERAL FACILITIES LOGISTICS, LLC: net 197.75 USD, transaction count 1; largest transaction 197.75 USD on award SPE4A621FA5UR.
++
++The largest single transaction in the set is 82540.00 USD to MARTELLE WATER TREATMENT, INC. on award W911SA25F1001. Selecting the supplier from that single transaction would name MARTELLE WATER TREATMENT, INC.
++That reading is rejected because VETERAN CHEMICALS, INC. has a net obligation of 461107.00 USD and MARTELLE WATER TREATMENT, INC. has a net obligation of 82540.00 USD.
++
++## Risks
++
++The municipal invitation does not record those obligations.
++The archives are the 2026-09-06 USAspending snapshot. An obligation signed after that date is not in these files.
++Dropping the negative obligations would not replace VETERAN CHEMICALS, INC. The positive-only totals still rank VETERAN CHEMICALS, INC. first.
+diff --git a/output/analysis/summary.csv b/output/analysis/summary.csv
+new file mode 100644
+--- /dev/null
++++ b/output/analysis/summary.csv
+@@ -0,0 +1,5 @@
++offeror,net_obligation_usd,transaction_count,largest_transaction_usd
++"VETERAN CHEMICALS, INC.",461107.00,18,34559.00
++"MARTELLE WATER TREATMENT, INC.",82540.00,1,82540.00
++HILL BROTHERS CHEMICAL COMPANY,24076.92,1,24076.92
++"ASRC FEDERAL FACILITIES LOGISTICS, LLC",197.75,1,197.75

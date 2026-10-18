@@ -1,0 +1,32 @@
+{
+    "schema_version": 1,
+    "task": {
+        "name": "baby-carrot-task",
+        "type": "local",
+        "digest": "sha256:c3a08a9752251d3229911de071ba847d2d2281abc8b0f53d1d661df469cd8d58",
+        "path": "."
+    },
+    "install_only": false,
+    "timeout_multiplier": 1.0,
+    "agent": {
+        "name": "oracle",
+        "skills": [],
+        "extra_allowed_hosts": [],
+        "kwargs": {},
+        "mcp_servers": []
+    },
+    "skills": [],
+    "environment": {
+        "type": "docker",
+        "force_build": false,
+        "delete": true,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [],
+        "kwargs": {},
+        "extra_allowed_hosts": []
+    },
+    "verifier": {
+        "disable": false
+    }
+}

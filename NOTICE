@@ -1,0 +1,20 @@
+Sources retrieved 2026-10-07.
+
+USAspending Award Data Archive, Contracts Full files for fiscal years 2018 through 2025, file date 2026-09-06.
+Publisher: U.S. Department of the Treasury, Bureau of the Fiscal Service.
+URLs: https://files.usaspending.gov/award_data_archive/FY2018_All_Contracts_Full_20260906.zip through FY2025_All_Contracts_Full_20260906.zip
+License: U.S. government work, public domain, 17 U.S.C. section 105.
+
+USAspending Data Dictionary Crosswalk.
+URL: https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx
+License: U.S. government work, public domain, 17 U.S.C. section 105.
+
+USAspending Analyst's Guide to Federal Spending Data.
+URL: https://www.usaspending.gov/data/analyst-guide-download.pdf
+License: U.S. government work, public domain, 17 U.S.C. section 105.
+
+The files under environment/data/transactions are the ferric chloride transaction rows taken from those archives, including laboratory product codes. They are not the full award archives. One fiscal-year extract lists some actions twice. environment/data/reference/scoring-standard.txt is the office rule for this decision. It is not a USAspending record.
+
+City of Kalamazoo Invitation for Bid 19000-016.0, Ferric Chloride, issued 2026-08-31.
+URL: https://www.kalamazoocity.org/files/assets/public/v/1/purchasing/bid-documents/2026/19000-016.0/19000-016.0-bid-document.pdf
+This is a public municipal procurement document. It is not a federal contract record.
