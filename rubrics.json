@@ -18,7 +18,7 @@
   {
     "item": 3,
     "weight": 10,
-    "criterion": "recommendation.md states the gap versus the next supplier in USD to the cent, between 370000 and 390000.",
+    "criterion": "recommendation.md states the gap versus the next supplier in USD to the cent, between 320000 and 350000.",
     "category": "recommend",
     "verification_type": "text",
     "grades_output_files": ["recommendation.md"]
@@ -74,7 +74,7 @@
   {
     "item": 10,
     "weight": 3,
-    "criterion": "analysis/summary.csv contains exactly four data rows.",
+    "criterion": "analysis/summary.csv contains exactly three data rows.",
     "category": "explore",
     "verification_type": "code_execution",
     "grades_output_files": ["analysis/summary.csv"]
@@ -98,7 +98,7 @@
   {
     "item": 13,
     "weight": 7,
-    "criterion": "analysis/summary.csv gives VETERAN CHEMICALS, INC. a net_obligation_usd between 455000 and 468000.",
+    "criterion": "analysis/summary.csv gives VETERAN CHEMICALS, INC. a net_obligation_usd between 350000 and 375000.",
     "category": "analyze",
     "verification_type": "code_execution",
     "grades_output_files": ["analysis/summary.csv"]
@@ -106,7 +106,7 @@
   {
     "item": 14,
     "weight": 7,
-    "criterion": "analysis/summary.csv gives MARTELLE WATER TREATMENT, INC. a net_obligation_usd between 80000 and 90000.",
+    "criterion": "analysis/summary.csv has no MARTELLE WATER TREATMENT, INC. row with a net_obligation_usd above 1000.",
     "category": "analyze",
     "verification_type": "code_execution",
     "grades_output_files": ["analysis/summary.csv"]
@@ -130,7 +130,7 @@
   {
     "item": 17,
     "weight": 4,
-    "criterion": "The transaction_count values in analysis/summary.csv sum to between 19 and 23.",
+    "criterion": "The transaction_count values in analysis/summary.csv sum to between 15 and 18.",
     "category": "analyze",
     "verification_type": "code_execution",
     "grades_output_files": ["analysis/summary.csv"]
@@ -170,7 +170,7 @@
   {
     "item": 22,
     "weight": 4,
-    "criterion": "The maximum largest_transaction_usd in analysis/summary.csv is between 80000 and 85000.",
+    "criterion": "The maximum largest_transaction_usd in analysis/summary.csv is between 28000 and 31000.",
     "category": "hypothesize",
     "verification_type": "code_execution",
     "grades_output_files": ["analysis/summary.csv"]
@@ -218,7 +218,7 @@
   {
     "item": 28,
     "weight": 2,
-    "criterion": "recommendation.md states that supplier's net obligation in USD to the cent, between 455000 and 468000.",
+    "criterion": "recommendation.md states that supplier's net obligation in USD to the cent, between 350000 and 375000.",
     "category": "analyze",
     "verification_type": "text",
     "grades_output_files": ["recommendation.md"]

@@ -267,13 +267,27 @@ def accept(row: dict[str, str], suppliers: dict[str, dict]) -> None:
         slot["largest_award"] = award
 
 
-def scan() -> tuple[list[str], str, str, list[str], dict[str, dict]]:
+def recurring_level(rows: list[dict[str, str]]) -> Decimal:
+    counts: dict[str, int] = {}
+    for row in rows:
+        key = money(Decimal(raw_amount(row)))
+        counts[key] = counts.get(key, 0) + 1
+    if not counts:
+        raise SystemExit("no kept actions")
+    chosen = max(counts, key=lambda key: (counts[key], Decimal(key)))
+    return Decimal(chosen)
+
+
+def scan() -> tuple[list[str], str, str, list[str], Decimal, dict[str, str], dict[str, dict]]:
     archives, rows = load_rows()
     vehicle, start, omitted, kept = kept_rows(rows)
+    level = recurring_level(kept)
+    scored = [row for row in kept if Decimal(raw_amount(row)) <= level]
+    outlier = max(kept, key=lambda row: Decimal(raw_amount(row)))
     suppliers: dict[str, dict] = {}
-    for row in kept:
+    for row in scored:
         accept(row, suppliers)
-    return archives, vehicle, start, omitted, suppliers
+    return archives, vehicle, start, omitted, level, outlier, suppliers
 
 
 def render(
@@ -281,6 +295,8 @@ def render(
     vehicle: str,
     start: str,
     omitted: list[str],
+    level: Decimal,
+    outlier: dict[str, str],
     suppliers: dict[str, dict],
 ) -> tuple[str, str]:
     ranked = sorted(suppliers, key=lambda name: suppliers[name]["net"], reverse=True)
@@ -293,8 +309,9 @@ def render(
     gap = win["net"] - run["net"]
     positive_rank = sorted(suppliers, key=lambda name: suppliers[name]["positive"], reverse=True)
     still_winner = positive_rank[0] == winner
-    peak_name = max(suppliers, key=lambda name: suppliers[name]["largest"])
-    peak = suppliers[peak_name]
+    peak_name = field(outlier, "recipient_name")
+    peak_amount = Decimal(raw_amount(outlier))
+    peak_award = field(outlier, "award_id")
 
     lines = [
         "# Ferric chloride supply recommendation",
@@ -346,6 +363,11 @@ def render(
                 + ", ".join(omitted)
                 + "."
             ),
+            (
+                f"The recurring order level is {money(level)} USD, the obligation "
+                "amount on the greatest number of kept actions. An action above "
+                "that level is omitted."
+            ),
             "",
             "Suppliers, net obligation in USD, transaction count, and largest transaction:",
             "",
@@ -363,8 +385,8 @@ def render(
         [
             "",
             (
-                f"The largest single transaction in the set is {money(peak['largest'])} USD "
-                f"to {peak_name} on award {peak['largest_award']}. "
+                f"The largest single transaction in the set is {money(peak_amount)} USD "
+                f"to {peak_name} on award {peak_award}. "
                 f"Selecting the supplier from that single transaction would name {peak_name.rstrip('.')}."
             ),
             (
@@ -407,8 +429,8 @@ def render(
 
 
 def main() -> None:
-    archives, vehicle, start, omitted, suppliers = scan()
-    memo, table = render(archives, vehicle, start, omitted, suppliers)
+    archives, vehicle, start, omitted, level, outlier, suppliers = scan()
+    memo, table = render(archives, vehicle, start, omitted, level, outlier, suppliers)
     destination = OUT_DIR / "analysis"
     destination.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "recommendation.md").write_text(memo, encoding="utf-8")

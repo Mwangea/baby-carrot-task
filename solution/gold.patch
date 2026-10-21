@@ -7,7 +7,7 @@ new file mode 100644
 +
 +## Recommendation
 +
-+Place the next bulk ferric chloride delivery order with VETERAN CHEMICALS, INC., whose net federal obligation is 461107.00 USD, 378567.00 USD ahead of the next supplier.
++Place the next bulk ferric chloride delivery order with VETERAN CHEMICALS, INC., whose net federal obligation is 360988.00 USD, 336911.08 USD ahead of the next supplier.
 +
 +## Evidence
 +
@@ -27,16 +27,16 @@ new file mode 100644
 +The requirements vehicle is W911KF20D0006. Scored actions begin on the first action date of that vehicle, 2020-05-19. Zero-dollar actions are omitted.
 +The same action can appear twice. Each action is scored once, matched on award identifier, action date, and federal action obligation.
 +These awards are left out because an action's current total does not equal the scored obligations through that action: W911KF20F0155, W911SA22F1006, W911SA23F1000.
++The recurring order level is 29498.00 USD, the obligation amount on the greatest number of kept actions. An action above that level is omitted.
 +
 +Suppliers, net obligation in USD, transaction count, and largest transaction:
 +
-+- VETERAN CHEMICALS, INC.: net 461107.00 USD, transaction count 18; largest transaction 34559.00 USD on award W911KF24F0057.
-+- MARTELLE WATER TREATMENT, INC.: net 82540.00 USD, transaction count 1; largest transaction 82540.00 USD on award W911SA25F1001.
++- VETERAN CHEMICALS, INC.: net 360988.00 USD, transaction count 15; largest transaction 29498.00 USD on award W911KF24F0114.
 +- HILL BROTHERS CHEMICAL COMPANY: net 24076.92 USD, transaction count 1; largest transaction 24076.92 USD on award 191BWC23P0030.
 +- ASRC FEDERAL FACILITIES LOGISTICS, LLC: net 197.75 USD, transaction count 1; largest transaction 197.75 USD on award SPE4A621FA5UR.
 +
 +The largest single transaction in the set is 82540.00 USD to MARTELLE WATER TREATMENT, INC. on award W911SA25F1001. Selecting the supplier from that single transaction would name MARTELLE WATER TREATMENT, INC.
-+That reading is rejected because VETERAN CHEMICALS, INC. has a net obligation of 461107.00 USD and MARTELLE WATER TREATMENT, INC. has a net obligation of 82540.00 USD.
++That reading is rejected because VETERAN CHEMICALS, INC. has a net obligation of 360988.00 USD and HILL BROTHERS CHEMICAL COMPANY has a net obligation of 24076.92 USD.
 +
 +## Risks
 +
@@ -47,9 +47,8 @@ diff --git a/output/analysis/summary.csv b/output/analysis/summary.csv
 new file mode 100644
 --- /dev/null
 +++ b/output/analysis/summary.csv
-@@ -0,0 +1,5 @@
+@@ -0,0 +1,4 @@
 +offeror,net_obligation_usd,transaction_count,largest_transaction_usd
-+"VETERAN CHEMICALS, INC.",461107.00,18,34559.00
-+"MARTELLE WATER TREATMENT, INC.",82540.00,1,82540.00
++"VETERAN CHEMICALS, INC.",360988.00,15,29498.00
 +HILL BROTHERS CHEMICAL COMPANY,24076.92,1,24076.92
 +"ASRC FEDERAL FACILITIES LOGISTICS, LLC",197.75,1,197.75

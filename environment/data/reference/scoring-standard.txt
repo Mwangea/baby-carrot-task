@@ -10,4 +10,6 @@ These files can list the same action twice. Score an action once. Two rows are t
 
 Keep an award only when each scored action's current total equals the sum of that award's scored ferric chloride obligations from its first scored action through that action, in action-date order. When an action fails that test, leave the whole award out. Compare the figures to the cent.
 
+After those tests, find the obligation amount that appears on the greatest number of kept actions. That amount is the recurring order level. Omit any kept action whose federal action obligation is greater than the recurring order level.
+
 Rank the remaining suppliers by the sum of the kept obligations. The next delivery order goes to the supplier with the largest net.
